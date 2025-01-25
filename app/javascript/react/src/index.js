@@ -1,11 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom/client"; // Ensure to import from "react-dom/client"
-import Welcome from "./component/Welcome";  // This should match the default export
+import ReactDOM from "react-dom/client";
+import App from "./component/App";
 
-document.addEventListener('DOMContentLoaded', () => {
-  const root = ReactDOM.createRoot(
-    document.body.appendChild(document.createElement('div'))
-  );
-  
-  root.render(<Welcome />);
+document.addEventListener("DOMContentLoaded", () => {
+  const rootElement = document.getElementById("root");
+
+  if (rootElement) {
+    const root = ReactDOM.createRoot(rootElement);
+    root.render(<App />);
+  } else {
+    console.error("Root element not found!");
+  }
 });
